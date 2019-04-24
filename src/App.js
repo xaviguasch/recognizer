@@ -6,6 +6,7 @@ import Logo from './components/Logo/Logo'
 import Rank from './components/Rank/Rank'
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm'
 import FaceRecognition from './components/FaceRecognition/FaceRecognition'
+import Signin from './components/Signin/Signin'
 import './App.css'
 const API_KEY = process.env.REACT_APP_CLARIFAI_API_KEY
 
@@ -50,8 +51,6 @@ class App extends Component {
   }
 
   displayFaceBox = box => {
-    console.log(box)
-
     this.setState({ box })
   }
 
@@ -72,10 +71,10 @@ class App extends Component {
     return (
       <div className='App'>
         <Particles className='particles' params={particlesOptions} />
+        <Signin />
         <Navigation />
         <Logo />
         <Rank />
-
         <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
         <FaceRecognition box={this.state.box} imageUrl={this.state.imageUrl} />
       </div>
